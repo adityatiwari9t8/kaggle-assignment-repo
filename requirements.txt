@@ -1,0 +1,10 @@
+# Only needed to run locally. Kaggle already has these preinstalled.
+numpy
+pandas
+torch
+transformers
+sentencepiece
+protobuf
+# dev / tests
+nbformat
+pyflakes

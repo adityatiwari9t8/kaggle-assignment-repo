@@ -1,0 +1,13 @@
+# competition data must not be committed
+data/raw/*
+!data/raw/.gitkeep
+# run outputs
+submission.csv
+*.pt
+*.bin
+*.safetensors
+# python / env
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

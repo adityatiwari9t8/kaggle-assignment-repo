@@ -1,0 +1,15 @@
+{
+  "mode": "full",
+  "n_fit": 52879,
+  "n_heldout": 4598,
+  "logloss_uniform": 1.0986,
+  "logloss_train_prior": 1.0971,
+  "logloss_single_orientation": 1.0075,
+  "logloss_swap_tta": 1.0067,
+  "temperature": 1.3850,
+  "logloss_tta_temperature": 0.9955,
+  "prior_blend": 0.0100,
+  "logloss_final_calibrated": 0.9955,
+  "accuracy": 0.5007
+}
+

@@ -35,7 +35,7 @@ LR_ENCODER, LR_HEAD = 2e-5, 2e-4
 
 CFG = {
     "smoke": dict(n_train=800, n_val=240, max_len=256, bs=4, accum=1, epochs=1, time_budget_min=10),
-    "full":  dict(n_train=None, n_val=None, max_len=384, bs=8, accum=2, epochs=1, time_budget_min=300),
+    "full":  dict(n_train=None, n_val=None, max_len=384, bs=8, accum=2, epochs=2, time_budget_min=240),
 }[MODE]
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
@@ -236,7 +236,7 @@ val_data = PairData(train_df.iloc[val_idx].reset_index(drop=True), y_all[val_idx
 class PairJudge(nn.Module):
     def __init__(self, path, n_extra=4, dropout=0.1):
         super().__init__()
-        self.enc = AutoModel.from_pretrained(path)
+        self.enc = AutoModel.from_pretrained(path).float()
         h = self.enc.config.hidden_size
         self.head = nn.Sequential(
             nn.Dropout(dropout), nn.Linear(4 * h + n_extra, h), nn.GELU(),
